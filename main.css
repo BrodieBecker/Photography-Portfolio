@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* Header Styles */
+#header {
+    position: static;
+    height: 3.5rem;
+    border-bottom: solid 2px grey;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#header>.title h1 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    width: fit-content;
+    padding-left: 20px;
+}
+
+#header>.social {
+    width: 5%;
+    padding-right: 100px;
+    transition: .25s;
+    display: flex;
+    align-items: flex-start;
+}
+
+#flickr_logo {
+    padding: 5px 0 0 0;
+}
+
+#header a {
+    margin: 5px;
+}
+
+#header img {
+    width: 1.5rem;
+}
+
+#header i {
+    font-size: 1.75rem;
+}
+
+/* Body Text */
+.main>.intro-text {
+    font-family: 'Raleway', sans-serif;
+    color: rgb(43, 43, 43);
+    height: 150px;
+    list-style-type: circle;
+    margin: 20px 0 0 20px;
+}
+
+.main>.intro-text ul{
+    padding-left: 18px;
+}
+
+/* Gallery Styles */
+.gallery {
+    margin: 0 25px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: .4fr;
+    row-gap: 2%;
+    column-gap: 2%;
+}
+
+
+.gallery__item {
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.gallery__item:hover {
+    transform: scale(1.1);
+}
+
+
+/*Image modal*/
+.modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.733);
+    margin-top: -1px;
+    animation: zoom 0.3s ease-in-out;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.modal img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.modal i {
+    color: white;
+    font-size: 3em;
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.modal i:hover {
+    color: darkgrey;
+}
+
+/* Display Scaling */
+@media (max-width: 950px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
