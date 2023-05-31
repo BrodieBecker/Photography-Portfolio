@@ -1,10 +1,10 @@
-    const images = document.querySelectorAll(".gallery__item img");
+    const images = document.querySelectorAll(".gallery-item img"); //Create list of all modal divs
     let imgSrc;
-    // get images src onclick
+
+    // Ieterate through list assigning click listener to each
     images.forEach((img) => {
         img.addEventListener("click", (e) => {
             imgSrc = e.target.src;
-            //run modal function
             imgModal(imgSrc);
         });
     });
